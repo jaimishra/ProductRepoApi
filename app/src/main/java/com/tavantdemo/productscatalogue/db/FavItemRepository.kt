@@ -8,18 +8,18 @@ import kotlinx.coroutines.withContext
 class FavItemRepository {
 
     companion object{
-        var dataBaseFavItem: DataBaseFavItem?=null
+        var dataBaseFavItem: FavoriteDataBaseItem?=null
 
-        private fun intializeDB(context: Context): DataBaseFavItem
+        private fun intializeDB(context: Context): FavoriteDataBaseItem
         {
-            return DataBaseFavItem.invoke(context)
+            return FavoriteDataBaseItem.invoke(context)
         }
 
         suspend fun insert(context: Context, favItem: ItemResponse)
         {
             dataBaseFavItem= intializeDB(context)
             withContext(IO) {
-                //dataBaseFavItem!!.getItemDao().insertItem(favItem)
+                dataBaseFavItem!!.getItemDao().insertItem(favItem)
             }
         }
 

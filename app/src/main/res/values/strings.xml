@@ -3,4 +3,5 @@
     <string name="title_products_home">Products</string>
     <string name="title_fav_products">Favorite Products</string>
     <string name="product_details">Product Details</string>
+    <string name="item_added_to_fav">Item added to fab list</string>
 </resources>
