@@ -8,7 +8,7 @@ import androidx.room.*
 interface FavItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertItem(item : List<ItemResponse>)
+    suspend fun insertItem(item : ItemResponse)
 
     @Query("Select * from favorites")
     fun getAllItems(): LiveData<List<ItemResponse>>
